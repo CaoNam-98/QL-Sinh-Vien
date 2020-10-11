@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Thông Tin Sinh Viên</h2>
+        <form>
+            <div class="form-group">
+                <label for="masv">Mã SV:</label>
+                <input type="text" class="form-control" id="masv" placeholder="Nhập MaSV" name="masv">
+            </div>  
+            <div class="form-group">
+                <label for="hoten">Họ Tên:</label>
+                <input type="text" class="form-control" id="hoten" placeholder="Nhập Họ Tên" name="hoten">
+            </div>
+            <div class="form-group">
+                <label for="cmnd">CMND:</label>
+                <input type="text" class="form-control" id="cmnd" placeholder="Nhập CMND" name="cmnd">
+            </div>
+            <div class="form-group">
+                <label for="sdt">Điện thoại:</label>
+                <input type="text" class="form-control" id="sdt" placeholder="Nhập SDT" name="sdt">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" class="form-control" id="email" placeholder="Nhập Email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="toan">Toán:</label>
+                <input type="number" class="form-control" id="toan" placeholder="Nhập Toán" name="toan">
+            </div>
+            <div class="form-group">
+                <label for="ly">Lý:</label>
+                <input type="number" class="form-control" id="ly" placeholder="Nhập Lý" name="lý">
+            </div>
+            <div class="form-group">
+                <label for="hoa">Hoá:</label>
+                <input type="number" class="form-control" id="hoa" placeholder="Nhập Hoá" name="hoa">
+            </div>
+            <button type="button" class="btn btn-success" onclick="ThemSinhVien()">Thêm sinh viên</button>
+            <button type="button" class="btn btn-primary" onclick="LuuThongTin()">Lưu</button>
+        </form>
+
+        <div style="float: right;">
+            <button type="button" class="btn btn-success" onclick="SetStorage()">Lưu Storage</button>
+            <button type="button" class="btn btn-primary" onclick="GetStorage()">Lấy Storage</button>
+            <button type="button" class="btn btn-danger" onclick="XoaSinhVien()">Xoá Sinh Viên</button>
+        </div>
+
+        <div class="input-group mb-3" style="padding-top: 20px">
+            <input type="text" class="form-control" placeholder="Nhập vào họ tên..." id="tukhoa" onkeyup="TimKiemSinhVien()" onchange="TimKiemSinhVien()" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" id="timkiem" onclick="TimKiemSinhVien()">Button</button>
+            </div>
+        </div>
+        <div class="alert alert-success" id="ThongBao" style="margin-top: 20px">hehe</div>
+
+        <div>
+            <h2>Danh sách sinh viên</h2>
+            <table id="TableSinhVien" class="table" >
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>MaSV</th>
+                    <th>HoTen</th>
+                    <th>Email</th>
+                    <th>CMND</th>
+                    <th>Điện thoại</th>
+                    <th>Điểm TB</th>
+                    <th>Xếp loại</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodySinhVien">
+                    <tr>
+                        
+                    </tr> 
+                </tbody>
+              </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="SinhVien.js"></script>
+    <script type="text/javascript" src="Validation.js"></script>
+    <script type="text/javascript" src="DanhSachSinhVien.js"></script>
+    <script type="text/javascript" src="main.js"></script>  
+</body>
+</html>
